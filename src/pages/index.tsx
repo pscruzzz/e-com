@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { FiChevronRight } from 'react-icons/fi'
@@ -35,7 +35,7 @@ interface IHomeProps {
 }
 
 const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
-  const [tranformState, setTransformState] = useState(-1440)
+  const [tranformState, setTransformState] = useState('-90vw')
   const [isTitleClicked, setIsTitleClicked] = useState(1)
 
   const MainTitle = {
@@ -77,8 +77,29 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
     textAlign: 'center'
   }
 
+  const handleResize = useCallback(() => {
+    if (window.innerWidth < 1600) {
+      const newTranslateX = isTitleClicked * 90
+      setTransformState(`-${newTranslateX}vw`)
+    } else {
+      const newTranslateX = isTitleClicked * 1440
+      setTransformState(`-${newTranslateX}px`)
+    }
+    console.log('resized')
+  }, [isTitleClicked])
+
+  if (process.browser) {
+    window.addEventListener('resize', handleResize)
+  }
+
   useEffect(() => {
-    setTransformState(isTitleClicked * -1440)
+    if (window.innerWidth < 1600) {
+      const newTranslateX = isTitleClicked * 90
+      setTransformState(`-${newTranslateX}vw`)
+    } else {
+      const newTranslateX = isTitleClicked * 1440
+      setTransformState(`-${newTranslateX}px`)
+    }
   }, [isTitleClicked])
 
   return (
@@ -140,7 +161,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
                 <motion.div
                   key={index}
                   className="productBoard"
-                  initial={{ x: -1440 }}
+                  initial={false}
                   animate={{ x: tranformState }}
                   transition={{ type: 'keyframes', duration: 0.5 }}
                 >

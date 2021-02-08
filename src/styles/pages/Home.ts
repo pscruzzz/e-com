@@ -222,7 +222,7 @@ export const ProductBoardContainer = styled.div`
       left: -11%;
       z-index: 2;
       img {
-        width: 300px;
+        width: 20%;
         height: 450px;
         object-fit: cover;
         object-position: top;
