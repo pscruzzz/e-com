@@ -35,8 +35,9 @@ interface IHomeProps {
 }
 
 const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
-  const [tranformState, setTransformState] = useState('-90vw')
-  const [isTitleClicked, setIsTitleClicked] = useState(1)
+  const [tranformState, setTransformState] = useState<string | number>(0)
+
+  const [isTitleClicked, setIsTitleClicked] = useState(0)
 
   const MainTitle = {
     fontSize: '58px',
@@ -155,7 +156,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
           <h3 className="mainSubtitle">
             Maybe you are feeling a bit sassy today,huh?
           </h3>
-          <ProductBoardContainer>
+          <ProductBoardContainer className="ProductBoardContainerClass">
             {collectionsData.map((collection, index) => {
               return (
                 <motion.div

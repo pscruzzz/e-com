@@ -27,7 +27,6 @@ export const Container = styled.div`
       justify-content: space-between;
 
       .bold {
-        /* font-weight: bold; */
         margin-right: 10px;
       }
 
@@ -222,8 +221,9 @@ export const ProductBoardContainer = styled.div`
       left: -11%;
       z-index: 2;
       img {
-        width: 20%;
+        width: 20vw;
         height: 450px;
+        max-width: 300px;
         object-fit: cover;
         object-position: top;
         border-radius: 15px;
@@ -236,7 +236,7 @@ export const ProductBoardContainer = styled.div`
       align-items: flex-start;
       justify-content: center;
       width: 50%;
-      margin-left: 14%;
+      margin-left: 20%;
       z-index: 3;
 
       .skuTitle {
@@ -283,13 +283,6 @@ interface TitleAnimatedProps {
     textAlign: string
   }
 }
-
-/* interface AnimProps {
-  willAnimate: boolean
-}
-
-const EnteringMainTitle = keyframes<AnimProps>`
-` */
 
 export const TitleAnimated = styled.div<TitleAnimatedProps>`
   ${props => css`

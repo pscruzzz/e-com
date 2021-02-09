@@ -14,13 +14,15 @@ const Checkout: React.FC = () => {
             But if you are feeling nice today and want to donate your money,
             without receiving nothing in return, you can always donate to
           </h2>
+        </div>
+        <div className="pix">
           <h3>PIX KEY:</h3>
           <h3>pedro.scruz@icloud.com</h3>
         </div>
         <Link href="/">
           <div className="goHome">
-            <h3>Or you can go back home</h3>
             <FiHome size={40} />
+            <h3>Or you can go back home</h3>
           </div>
         </Link>
       </div>

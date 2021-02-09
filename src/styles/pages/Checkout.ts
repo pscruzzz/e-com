@@ -8,11 +8,10 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   background: ${props => props.theme.colors.backgroundSecondary};
-  position: relative;
 
   h1 {
     font-size: 70px;
-    color: ${props => props.theme.colors.textSecondary};
+    color: ${props => props.theme.colors.background};
   }
 
   h2 {
@@ -34,10 +33,33 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: ${props => props.theme.colors.backgroundSecondary};
+
+    .pix {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      border: 1px;
+      border-color: ${props => props.theme.colors.textSecondary};
+      border-style: solid;
+      border-radius: 15px;
+      padding: 20px 30px;
+
+      margin: 20px 0px 40px 0px;
+
+      > h3 {
+        color: ${props => props.theme.colors.textSecondary};
+        text-align: center;
+      }
+    }
 
     .message {
       width: 80%;
-      height: 50%;
+      height: fit-content;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,13 +72,15 @@ export const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: row;
-      position: absolute;
-      bottom: 10%;
+      flex-direction: column;
       cursor: pointer;
       z-index: 3;
+      > h3 {
+        color: ${props => props.theme.colors.textThird};
+        margin-right: 10px;
+      }
       svg {
-        color: ${props => props.theme.colors.background};
+        color: ${props => props.theme.colors.textThird};
       }
     }
   }
