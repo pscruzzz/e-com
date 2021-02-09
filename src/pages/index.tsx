@@ -227,7 +227,8 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       collectionsData: [data140, data141, data142],
       buildTime
-    }
+    },
+    revalidate: 120
   }
 }
 
