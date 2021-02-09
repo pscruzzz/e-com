@@ -27,24 +27,60 @@ interface ICollectionData {
   Price: number
 }
 
-const Product: React.FC = () => {
+interface IProductProps {
+  data: {
+    collectionId: number
+    Name: string
+    ProductName: string
+    SkuId: number
+    ProductDescription: string
+    SkuImageUrl: string
+    Price: number
+  }
+  staticBuildTime: string
+}
+
+const Product: React.FC<IProductProps> = ({ data, staticBuildTime }) => {
   const router = useRouter()
 
   console.log(router.query.slug)
 
+  if (router.isFallback) {
+    return (
+      <Container>
+        <Head>{`${router.query.slug} Collection`}</Head>
+        <div className="wrapper">
+          <header>
+            <CloudsSVG />
+            <span className="logo">e-COM</span>
+          </header>
+          <ProductBoard>
+            <Link href="/">
+              <div className="linkClass">
+                <FiChevronLeft size={40} color={'#BEE6E6'} />
+                <p>Go back home, son</p>
+              </div>
+            </Link>
+            <ProductProps></ProductProps>
+          </ProductBoard>
+          <footer>
+            <div className="buildTime">
+              <p className="bold">Builded at</p>
+              <p>Loading...</p>
+            </div>
+            <div className="developed">
+              <p className="bold">Developed by</p>
+              <p>Pedro Cruz</p>
+            </div>
+          </footer>
+        </div>
+      </Container>
+    )
+  }
+
   const [collectionData, setCollectionData] = useState<ICollectionData | null>(
-    null
+    data
   )
-  useEffect(() => {
-    console.log('oi')
-
-    router.query.slug &&
-      axios
-        .get(`../api/collections/${router.query.slug}`)
-        .then(response => setCollectionData(response.data))
-  }, [router.query.slug])
-
-  const buildTime = new Date().toUTCString()
 
   return (
     <Container>
@@ -84,7 +120,7 @@ const Product: React.FC = () => {
         <footer>
           <div className="buildTime">
             <p className="bold">Builded at</p>
-            <p>{buildTime}</p>
+            <p>{staticBuildTime}</p>
           </div>
           <div className="developed">
             <p className="bold">Developed by</p>
@@ -94,6 +130,30 @@ const Product: React.FC = () => {
       </div>
     </Container>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [{ params: { slug: '142' } }],
+    fallback: true
+  }
+}
+
+export const getStaticProps: GetStaticProps = async context => {
+  const { slug } = context.params
+
+  const data = await useCollections(typeof slug === 'string' ? slug : slug[0])
+
+  const buildTimeUnformatted = new Date()
+  const staticBuildTime = buildTimeUnformatted.toUTCString()
+
+  return {
+    props: {
+      data,
+      staticBuildTime
+    },
+    revalidate: 15
+  }
 }
 
 export default Product

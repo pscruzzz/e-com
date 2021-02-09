@@ -186,17 +186,40 @@ export const ProductBoardContainer = styled.div`
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: absolute;
     bottom: 1%;
     right: 0%;
 
     p {
+      width: 250px;
       color: ${props => props.theme.colors.background};
       font-size: 24px;
       font-weight: 400;
       font-family: Quicksand;
       align-self: center;
+      text-align: start;
+    }
+  }
+
+  .linkClassCollection {
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -10%;
+    right: 0%;
+
+    p {
+      width: 250px;
+      color: ${props => props.theme.colors.backgroundSecondary};
+      font-size: 24px;
+      font-weight: 400;
+      font-family: Quicksand;
+      align-self: center;
+      text-align: start;
     }
   }
 

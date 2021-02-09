@@ -57,34 +57,33 @@ export const Container = styled.div`
   }
 
   footer {
-      width: 100%;
-      margin-top: 40px;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .bold {
+      margin-right: 10px;
+    }
+
+    .developed {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-end;
+      font-size: 24px;
+      font-family: Quicksand;
+      font-weight: regular;
+    }
+
+    .buildTime {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-
-      .bold {
-        margin-right: 10px;
-      }
-
-      .developed {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: flex-end;
-        font-size: 24px;
-        font-family: Quicksand;
-        font-weight: regular;
-      }
-
-      .buildTime {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-      }
+      justify-content: center;
+      font-weight: 500;
     }
   }
 `

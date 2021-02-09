@@ -189,6 +189,12 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
                       <FiChevronRight size={40} color={'#BEE6E6'} />
                     </div>
                   </Link>
+                  <Link href={`/lp/${collection.collectionId}`}>
+                    <div className="linkClassCollection">
+                      <p>Go to collection page</p>
+                      <FiChevronRight size={40} color={'#1D2C38'} />
+                    </div>
+                  </Link>
                 </motion.div>
               )
             })}
@@ -221,8 +227,7 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       collectionsData: [data140, data141, data142],
       buildTime
-    },
-    revalidate: 1000
+    }
   }
 }
 
