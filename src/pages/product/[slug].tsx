@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
+import useSWR from 'swr'
 import axios from 'axios'
-import useCollections from '../../hooks/useCollections'
 
 import {
   Container,
@@ -15,7 +15,6 @@ import {
 import { FiChevronLeft } from 'react-icons/fi'
 
 import CloudsSVG from '../../assets/CloudsSVG'
-import { GetStaticProps, GetStaticPaths } from 'next'
 
 interface ICollectionData {
   collectionId: number
@@ -32,17 +31,17 @@ const Product: React.FC = () => {
 
   console.log(router.query.slug)
 
-  const [collectionData, setCollectionData] = useState<ICollectionData | null>(
-    null
-  )
-  useEffect(() => {
-    console.log('oi')
+  const { data: collectionData } = useSWR(
+    `../api/collections/${router.query.slug}`,
+    async url => {
+      const response = router.query.slug ? await axios.get(url) : undefined
+      const data = await response.data
 
-    router.query.slug &&
-      axios
-        .get(`../api/collections/${router.query.slug}`)
-        .then(response => setCollectionData(response.data))
-  }, [router.query.slug])
+      return data
+    }
+  )
+
+  console.log(collectionData)
 
   const buildTime = new Date().toUTCString()
 
@@ -75,10 +74,14 @@ const Product: React.FC = () => {
             <p className="skuDescription">
               {collectionData?.ProductDescription}
             </p>
-            <h3 className="skuPrice">R$ {collectionData?.Price},00</h3>
-            <Link href="/checkout">
-              <StyledDiv>Buy Now</StyledDiv>
-            </Link>
+            {collectionData && (
+              <>
+                <h3 className="skuPrice">R$ {collectionData?.Price},00</h3>
+                <Link href="/checkout">
+                  <StyledDiv>Buy Now</StyledDiv>
+                </Link>
+              </>
+            )}
           </ProductProps>
         </ProductBoard>
         <footer>

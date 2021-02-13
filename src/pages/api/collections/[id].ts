@@ -1,4 +1,3 @@
-import api, { apiPrice } from '../../../services/api'
 import useCollections from '../../../hooks/useCollections'
 
 import { NextApiRequest, NextApiResponse } from 'next'
