@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
-import axios from 'axios'
 import useCollections from '../../hooks/useCollections'
 
 import {
@@ -78,9 +77,7 @@ const Product: React.FC<IProductProps> = ({ data, staticBuildTime }) => {
     )
   }
 
-  const [collectionData, setCollectionData] = useState<ICollectionData | null>(
-    data
-  )
+  const collectionData = data
 
   return (
     <Container>

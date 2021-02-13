@@ -1,4 +1,6 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import { shade } from 'polished'
 
 interface IProductBoard {
   tranformState: number
@@ -12,7 +14,7 @@ export const Container = styled.div`
 
   .wrapper {
     max-width: 1440px;
-    padding: 1vw;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,11 +25,27 @@ export const Container = styled.div`
       margin-top: 40px;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
 
       .bold {
         margin-right: 10px;
+      }
+
+      .forever {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        p {
+          color: ${shade(0.3, '#BEE6E6')};
+          transition: all ease 0.5s;
+          :hover {
+            color: ${shade(1, '#BEE6E6')};
+          }
+        }
       }
 
       .developed {
@@ -199,6 +217,8 @@ export const ProductBoardContainer = styled.div`
       font-family: Quicksand;
       align-self: center;
       text-align: start;
+      white-space: nowrap;
+      width: 100%;
     }
   }
 
@@ -220,6 +240,8 @@ export const ProductBoardContainer = styled.div`
       font-family: Quicksand;
       align-self: center;
       text-align: start;
+      white-space: nowrap;
+      width: 100%;
     }
   }
 

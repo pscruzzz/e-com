@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { FiChevronRight, FiHome } from 'react-icons/fi'
+import { FiChevronRight } from 'react-icons/fi'
 import { GetStaticProps } from 'next'
 import useCollections from '../hooks/useCollections'
 
@@ -191,7 +191,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
                   </Link>
                   <Link href={`/static-product/${collection.collectionId}`}>
                     <div className="linkClassCollection">
-                      <p>Go to static product page</p>
+                      <p>Go to static collection page</p>
                       <FiChevronRight size={40} color={'#1D2C38'} />
                     </div>
                   </Link>
@@ -205,11 +205,6 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
             <p className="bold">Builded at</p>
             <p>{buildTime}</p>
           </div>
-          <Link href={'/forever-static-home'}>
-            <div className="forever">
-              <p>Go to forever-static-home</p>
-            </div>
-          </Link>
           <div className="developed">
             <p className="bold">Developed by</p>
             <p>Pedro Cruz</p>
@@ -232,8 +227,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       collectionsData: [data140, data141, data142],
       buildTime
-    },
-    revalidate: 120
+    }
   }
 }
 
