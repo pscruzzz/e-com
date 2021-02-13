@@ -9,10 +9,26 @@ export default createGlobalStyle`
     outline: 0;
   }
 
+  html {
+    /* a cada 1rem será considera 10px */
+    /* font-size: 62.5%; */
+    font-size: 62.5%;
+    text-rendering: optimizelegibility;
+    @media (max-width: 950px) {
+      font-size: 50%;
+    }
+    @media (max-width: 556px) {
+      font-size: 40%;
+    }
+
+  }
+
   body {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.textPrimary};
-    font: 400 35px Quicksand, sans-serif;
+    font: 400 3.0rem Quicksand, sans-serif;
+    text-rendering: optimizelegibility;
+    position: relative;
   }
 
   button {

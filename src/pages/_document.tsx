@@ -42,12 +42,10 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
-
           <link
             href="https://fonts.googleapis.com/css2?family=Audiowide&family=Quicksand:wght@400;500&display=swap"
             rel="stylesheet"
           />
-
           <link rel="icon" href="/static/Clouds.svg" />
         </Head>
         <body>

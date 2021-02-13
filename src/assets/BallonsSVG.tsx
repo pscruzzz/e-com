@@ -4,7 +4,7 @@ const BallonsSVG: React.FC = () => {
   return (
     <div>
       <svg
-        width="327"
+        width="288"
         height="395"
         viewBox="0 0 327 395"
         fill="none"

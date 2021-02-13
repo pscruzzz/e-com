@@ -56,7 +56,7 @@ const Product: React.FC<IProductProps> = ({ data, staticBuildTime }) => {
           <ProductBoard>
             <Link href="/">
               <div className="linkClass">
-                <FiChevronLeft size={40} color={'#BEE6E6'} />
+                <FiChevronLeft size={'3rem'} color={'#BEE6E6'} />
                 <p>Go back home, son</p>
               </div>
             </Link>
@@ -90,7 +90,7 @@ const Product: React.FC<IProductProps> = ({ data, staticBuildTime }) => {
         <ProductBoard>
           <Link href="/">
             <div className="linkClass">
-              <FiChevronLeft size={40} color={'#BEE6E6'} />
+              <FiChevronLeft size={'3rem'} color={'#BEE6E6'} />
               <p>Go back home, son</p>
             </div>
           </Link>

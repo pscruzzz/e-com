@@ -7,25 +7,25 @@ export const Container = styled.div`
   flex-direction: column;
 
   h1 {
-    font-size: 70px;
+    font-size: 6rem;
     color: ${props => props.theme.colors.textPrimary};
     /* margin-top: 30px; */
     position: relative;
   }
 
   h2 {
-    font-size: 54px;
+    font-size: 5rem;
     color: ${props => props.theme.colors.textPrimary};
     font-weight: 400;
   }
 
   h3 {
-    font-size: 35px;
+    font-size: 3rem;
     font-weight: 400;
   }
 
   p {
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 400;
   }
 
@@ -73,7 +73,7 @@ export const Container = styled.div`
       flex-direction: row;
       align-items: flex-end;
       justify-content: flex-end;
-      font-size: 24px;
+      font-size: 2rem;
       font-family: Quicksand;
       font-weight: regular;
     }
@@ -84,6 +84,12 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       font-weight: 500;
+    }
+    @media (max-width: 826px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 `
@@ -99,11 +105,11 @@ export const ProductBoard = styled.div`
     justify-content: flex-end;
     position: absolute;
     bottom: 1%;
-    right: 1%;
+    right: 4%;
 
     p {
       color: ${props => props.theme.colors.background};
-      font-size: 24px;
+      font-size: 2rem;
       font-weight: 400;
       font-family: Quicksand;
       align-self: center;
@@ -137,7 +143,7 @@ export const StyledDiv = styled.div`
   background: ${props => props.theme.colors.textFourth};
   font-family: Quicksand;
   border: none;
-  font-size: 24px;
+  font-size: 2rem;
   padding: 10px;
   border-radius: 15px 10px;
   transition: background-color ease 0.5s;

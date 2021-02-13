@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: ${props => props.theme.colors.backgroundSecondary};
 
+  text-align: center;
+
   h1 {
-    font-size: 70px;
+    font-size: 6rem;
     color: ${props => props.theme.colors.background};
   }
 
   h2 {
-    font-size: 54px;
+    font-size: 5rem;
     color: ${props => props.theme.colors.textThird};
     font-weight: 400;
     text-align: center;
@@ -24,11 +24,24 @@ export const Container = styled.div`
 
   h3 {
     color: ${props => props.theme.colors.textFourth};
-    font-size: 35px;
+    font-size: 3rem;
     font-weight: 400;
   }
 
+  @media (max-width: 413px) {
+    h1 {
+      font-size: 5rem;
+    }
+    h2 {
+      font-size: 4rem;
+    }
+    h3 {
+      font-size: 3rem;
+    }
+  }
+
   .wrapper {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

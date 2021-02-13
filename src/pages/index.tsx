@@ -40,7 +40,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
   const [isTitleClicked, setIsTitleClicked] = useState(0)
 
   const MainTitle = {
-    fontSize: '58px',
+    fontSize: '5rem',
     color: '#1D2C38',
     whiteSpace: 'nowrap',
     marginBottom: '20px',
@@ -53,7 +53,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
   }
 
   const LeftSideTitle = {
-    fontSize: '35px',
+    fontSize: '3rem',
     color: '#8ea6b9',
     whiteSpace: 'nowrap',
     marginBottom: '0px',
@@ -66,7 +66,7 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
   }
 
   const RightSideTitle = {
-    fontSize: '35px',
+    fontSize: '3rem',
     color: '#8ea6b9',
     whiteSpace: 'nowrap',
     marginBottom: '0px',
@@ -186,13 +186,13 @@ const Home: React.FC<IHomeProps> = ({ collectionsData, buildTime }) => {
                   <Link href={`/dynamic-product/${collection.collectionId}`}>
                     <div className="linkClass">
                       <p>Go to dynamic product page</p>
-                      <FiChevronRight size={40} color={'#BEE6E6'} />
+                      <FiChevronRight size={'3rem'} color={'#BEE6E6'} />
                     </div>
                   </Link>
                   <Link href={`/static-product/${collection.collectionId}`}>
                     <div className="linkClassCollection">
                       <p>Go to static product page</p>
-                      <FiChevronRight size={40} color={'#1D2C38'} />
+                      <FiChevronRight size={'3rem'} color={'#1D2C38'} />
                     </div>
                   </Link>
                 </motion.div>
