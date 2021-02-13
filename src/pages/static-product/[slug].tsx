@@ -139,14 +139,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params
 
-  const data = await useCollections(typeof slug === 'string' ? slug : slug[0])
+  const response = await useCollections(
+    typeof slug === 'string' ? slug : slug[0]
+  )
 
   const buildTimeUnformatted = new Date()
   const staticBuildTime = buildTimeUnformatted.toUTCString()
 
   return {
     props: {
-      data,
+      data: response.data,
       staticBuildTime
     },
     revalidate: 15

@@ -225,7 +225,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      collectionsData: [data140, data141, data142],
+      collectionsData: [data140.data, data141.data, data142.data],
       buildTime
     }
   }

@@ -48,8 +48,15 @@ export default async function collections(
 
   if (typeof id === 'string') {
     const formattedResponseJson = await useCollections(id)
-    response.send(formattedResponseJson)
+
+    if (formattedResponseJson.error) {
+      return response.status(404).send({ error: formattedResponseJson.error })
+    }
+
+    response.setHeader('Cache-Control', 's-maxage=100, stale-while-revalidate')
+
+    return response.send(formattedResponseJson.data)
   } else {
-    response.send('Parameter needs to be a string')
+    return response.status(404).send('Parameter needs to be a string')
   }
 }
