@@ -13,7 +13,7 @@ The image above is what you should be able to see as soon as you enter the page.
 All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build process where you can identify each route's characteristics.
 
 ```bash
-  	Page                                                           Size     First Load JS
+  Page                                                           Size     First Load JS
   	┌ ● / (ISR: 120 Seconds)                                       1.33 kB         115 kB
   	├   /_app                                                      0 B            71.5 kB
   	├ ○ /404                                                       3.02 kB        74.5 kB
