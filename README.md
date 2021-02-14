@@ -8,9 +8,9 @@ This project was made with two intentions in mind. The first intention would be 
 
 <img src="https://user-images.githubusercontent.com/67528242/107867249-14330f00-6e58-11eb-8544-93a11d950f3c.png" width="400px">
 
-The image above is what you should be able to see as soon as you enter the page. If you are not seeing what the image above presents, it's likely that either the account does not exist anymore or changes were done to the collections fecthed. You might be able to still see the website through [/forever-static-home](https://e-com.pscruzzz.vercel.app/forever-static-home) wich is a page that never revalidates after it's build.
+The image above is what you should be able to see as soon as you enter the page. If you are not seeing what the image above presents, it's likely that either the account does not exist anymore or changes were done to the collections fecthed. You might be able to still see the website through [/forever-static-home](https://e-com.pscruzzz.vercel.app/forever-static-home) which is a page that never revalidates after its build.
 
-ALl in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build where you can check the routes characteristics.
+All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build process where you can identify each route's characteristics.
 
 <img src="https://user-images.githubusercontent.com/67528242/107867488-18602c00-6e5a-11eb-9e49-b88654cf40af.png">
 
@@ -28,14 +28,14 @@ If you feel so inclined, you can also test the severless function created in thi
   });
 ```
 
-### Or
+Or
 
 ```bash
   curl -X GET \
   https://e-com.pscruzzz.vercel.app/api/collections/142
 ```
 
-### Or
+Or
 
 [./api/collections/142](https://e-com.pscruzzz.vercel.app/api/collections/142)
 
