@@ -12,7 +12,14 @@ The image above is what you should be able to see as soon as you enter the page.
 
 All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build process where you can identify each route's characteristics.
 
-<img src="https://user-images.githubusercontent.com/67528242/107867488-18602c00-6e5a-11eb-9e49-b88654cf40af.png">
+<img src="https://user-images.githubusercontent.com/67528242/107868101-f9fd2f00-6e5f-11eb-90f6-38543a007d4a.png">
+
+```bash
+  λ  (Lambda)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+  ○  (Static)  automatically rendered as static HTML (uses no initial props)
+  ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+     (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+```
 
 If you feel so inclined, you can also test the severless function created in this exercise:
 
