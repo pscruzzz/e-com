@@ -4,13 +4,13 @@ Hey there! How is it going?
 
 This project was made with two intentions in mind. The first intention would be to measure the disparity between static pages and dynamic pages that are exactly the same using Next.Js as the main framework and Google's PageSpeed as tool to measure. The second intention is fecthing private and public data from a VTEX account through severless functions!
 
-## About this project
+## About this project [Project Link](https://e-com.pscruzzz.vercel.app/)
 
 <img src="https://user-images.githubusercontent.com/67528242/107867249-14330f00-6e58-11eb-8544-93a11d950f3c.png" width="400px">
 
 The image above is what you should be able to see as soon as you enter the page. If you are not seeing what the image above presents, it's likely that either the account does not exist anymore or changes were done to the collections fecthed. You might be able to still see the website through [/forever-static-home](https://e-com.pscruzzz.vercel.app/forever-static-home) which is a page that never revalidates after its build.
 
-All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build process where you can identify each route's characteristics.
+All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the bash below is a "print" from this application build process where you can identify each route's characteristics.
 
 ```bash
   Page                                                           Size     First Load JS
