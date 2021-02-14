@@ -12,9 +12,18 @@ The image above is what you should be able to see as soon as you enter the page.
 
 All in all, this project represents a headless VTEX e-commerce hosted at Vercel that uses Next.Js to produce static and also dynamic pages. To expose which route is dynamic or static, the image below is a print from this application build process where you can identify each route's characteristics.
 
-<img src="https://user-images.githubusercontent.com/67528242/107868101-f9fd2f00-6e5f-11eb-90f6-38543a007d4a.png">
-
 ```bash
+  	Page                                                           Size     First Load JS
+  	┌ ● / (ISR: 120 Seconds)                                       1.33 kB         115 kB
+  	├   /_app                                                      0 B            71.5 kB
+  	├ ○ /404                                                       3.02 kB        74.5 kB
+  	├ λ /api/collections/[id]                                      0 B            71.5 kB
+  	├ ○ /checkout                                                  914 B          74.3 kB
+  	├ ○ /dynamic-product/[slug]                                    10.6 kB         116 kB
+  	├ ● /forever-static-home                                       1.32 kB         115 kB
+  	└ ● /static-product/[slug]                                     1.59 kB         107 kB
+  	    └ /static-product/142
+
   λ  (Lambda)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
   ○  (Static)  automatically rendered as static HTML (uses no initial props)
   ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
